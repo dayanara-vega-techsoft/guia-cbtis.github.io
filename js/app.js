@@ -54,6 +54,11 @@ function setActive(pageId){
 }
 
 function switchSubPage(pageId){
+
+  if(window.innerWidth <= 1024 && typeof closeSidebar === "function"){
+    closeSidebar();
+  }
+
   setActive(pageId);
   const content = document.getElementById("lessonContent");
 
@@ -126,3 +131,144 @@ function verifyQuiz(){
     feedback.innerHTML = "❌ Incorrecto. El texto argumentativo es el que busca persuadir.";
   }
 }
+
+
+
+
+
+function ensureSidebarBackdrop(){
+  let backdrop = document.querySelector('.sidebar-backdrop');
+
+  if(!backdrop){
+    backdrop = document.createElement('div');
+    backdrop.className = 'sidebar-backdrop';
+    backdrop.onclick = closeSidebar;
+    document.body.appendChild(backdrop);
+  }
+
+  return backdrop;
+}
+
+function toggleSidebar(){
+
+  const layout = document.querySelector('.lesson-layout');
+
+  if(!layout) return;
+
+  const backdrop = ensureSidebarBackdrop();
+
+  const isMobile = window.innerWidth <= 1024;
+
+  if(isMobile){
+
+    layout.classList.toggle('sidebar-open');
+
+    if(layout.classList.contains('sidebar-open')){
+      backdrop.classList.add('active');
+    }else{
+      backdrop.classList.remove('active');
+    }
+
+  }else{
+
+    layout.classList.toggle('sidebar-hidden');
+
+  }
+
+}
+
+function closeSidebar(){
+
+  const layout = document.querySelector('.lesson-layout');
+  const backdrop = document.querySelector('.sidebar-backdrop');
+
+  if(layout){
+    layout.classList.remove('sidebar-open');
+  }
+
+  if(backdrop){
+    backdrop.classList.remove('active');
+  }
+
+}
+
+window.addEventListener('resize', () => {
+
+  const layout = document.querySelector('.lesson-layout');
+  const backdrop = document.querySelector('.sidebar-backdrop');
+
+  if(window.innerWidth > 1024){
+
+    if(layout){
+      layout.classList.remove('sidebar-open');
+    }
+
+    if(backdrop){
+      backdrop.classList.remove('active');
+    }
+
+  }
+
+});
+
+/* =========================================
+   SIDEBAR TOGGLE GLOBAL - SIEMPRE VISIBLE
+========================================= */
+
+function ensureSidebarBackdrop(){
+  let backdrop = document.querySelector('.sidebar-backdrop');
+
+  if(!backdrop){
+    backdrop = document.createElement('div');
+    backdrop.className = 'sidebar-backdrop';
+    backdrop.onclick = closeSidebar;
+    document.body.appendChild(backdrop);
+  }
+
+  return backdrop;
+}
+
+function toggleSidebar(){
+  const layout = document.querySelector('.lesson-layout');
+
+  if(!layout) return;
+
+  const backdrop = ensureSidebarBackdrop();
+  const isMobile = window.innerWidth <= 1024;
+
+  if(isMobile){
+    layout.classList.toggle('sidebar-open');
+    backdrop.classList.toggle('active', layout.classList.contains('sidebar-open'));
+  }else{
+    layout.classList.toggle('sidebar-hidden');
+    backdrop.classList.remove('active');
+  }
+}
+
+function closeSidebar(){
+  const layout = document.querySelector('.lesson-layout');
+  const backdrop = document.querySelector('.sidebar-backdrop');
+
+  if(layout){
+    layout.classList.remove('sidebar-open');
+  }
+
+  if(backdrop){
+    backdrop.classList.remove('active');
+  }
+}
+
+window.addEventListener('resize', () => {
+  const layout = document.querySelector('.lesson-layout');
+  const backdrop = document.querySelector('.sidebar-backdrop');
+
+  if(window.innerWidth > 1024){
+    if(layout){
+      layout.classList.remove('sidebar-open');
+    }
+
+    if(backdrop){
+      backdrop.classList.remove('active');
+    }
+  }
+});

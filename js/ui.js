@@ -40,6 +40,9 @@ function renderModal(){
   return `
     <div class="modal" id="lessonModal">
       <div class="modal-content">
+        <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Mostrar u ocultar menú">
+          ☰
+        </button>
         <div class="lesson-layout">
           <aside class="lesson-sidebar" id="lessonSidebar"></aside>
           <main class="lesson-main" id="lessonContent"></main>
