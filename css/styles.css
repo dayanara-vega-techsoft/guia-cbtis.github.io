@@ -143,3 +143,231 @@ body {
   }
 }
 
+
+/* =========================================================
+   RESPONSIVE PATCH TABLET / MOBILE
+   Mantiene el diseño original, solo ajusta comportamiento.
+========================================================= */
+
+@media (max-width: 1024px) {
+  body {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 18px;
+  }
+
+  .player-hud {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .xp-container {
+    width: 100%;
+  }
+
+  .lobby-header h1 {
+    font-size: 2.4rem;
+  }
+
+  .missions-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .modal-content {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .lesson-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .lesson-sidebar {
+    width: 300px;
+    min-width: 300px;
+    height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
+    padding-bottom: 90px;
+  }
+
+  .lesson-main {
+    height: 100vh;
+    overflow-y: auto;
+    padding: 24px;
+    padding-bottom: 90px;
+  }
+
+  .topic-shell {
+    padding: 24px;
+  }
+
+  .session-header h1 {
+    font-size: 1.8rem;
+    line-height: 1.25;
+  }
+
+  .nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tab-btn {
+    flex: 1 1 180px;
+    text-align: center;
+  }
+
+  .map-branches {
+    grid-template-columns: 1fr;
+  }
+
+  .subtopic-section,
+  .quiz-card,
+  .text-panel,
+  .map-container {
+    max-width: 100%;
+  }
+
+  .text-body {
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .lesson-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .lesson-sidebar {
+    width: 100%;
+    min-width: 100%;
+    height: 34vh;
+    max-height: 34vh;
+    overflow-y: auto;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    padding: 16px;
+    padding-bottom: 40px;
+  }
+
+  .lesson-main {
+    height: 66vh;
+    overflow-y: auto;
+    padding: 18px;
+    padding-bottom: 80px;
+  }
+
+  .topic-shell {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .session-header {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .session-header h1 {
+    font-size: 1.45rem;
+  }
+
+  .section-h2 {
+    font-size: 1.3rem;
+  }
+
+  .subtopic-section {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .quiz-card {
+    padding: 18px;
+  }
+
+  .nav-tabs {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .tab-btn {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .sidebar-sub-btn {
+    font-size: .92rem;
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 14px;
+  }
+
+  .lobby-header h1 {
+    font-size: 1.9rem;
+  }
+
+  .mission-node {
+    padding: 22px;
+  }
+
+  .icon {
+    font-size: 3rem;
+  }
+
+  .lesson-sidebar {
+    height: 36vh;
+    max-height: 36vh;
+  }
+
+  .lesson-main {
+    height: 64vh;
+    padding: 14px;
+    padding-bottom: 80px;
+  }
+
+  .session-header h1 {
+    font-size: 1.25rem;
+  }
+
+  .session-header p {
+    font-size: .9rem;
+  }
+
+  .section-h2 {
+    font-size: 1.15rem;
+  }
+
+  .text-panel,
+  .important-box,
+  .map-container,
+  .quiz-card,
+  .subtopic-section {
+    padding: 16px;
+  }
+
+  .option-item {
+    align-items: flex-start;
+    line-height: 1.45;
+  }
+}
