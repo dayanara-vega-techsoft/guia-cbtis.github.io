@@ -302,15 +302,22 @@ body {
     padding: 18px;
   }
 
-  .nav-tabs {
-    flex-direction: row;
-    gap: 8px;
-  }
+  .nav-tabs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:20px;
+}
 
-  .tab-btn {
-    flex: 1 1 100%;
-    width: 100%;
-  }
+.tab-btn{
+    flex:0 0 auto;
+    width:auto;
+    min-width:auto;
+    padding:10px 16px;
+    border-radius:12px;
+    font-size:.92rem;
+    white-space:nowrap;
+}
 
   .sidebar-sub-btn {
     font-size: .92rem;
@@ -372,9 +379,10 @@ body {
   }
 }
 
+
+
 /* =========================================
    SIDEBAR TOGGLE SIEMPRE VISIBLE
-   Integrado para EDIEMS QUEST
 ========================================= */
 
 .menu-toggle{
@@ -385,7 +393,7 @@ body {
   position:fixed;
   top:15px;
   left:15px;
-  z-index:100000;
+  z-index:99999;
 
   width:52px;
   height:52px;
@@ -404,6 +412,7 @@ body {
   cursor:pointer;
 
   box-shadow:0 0 20px rgba(0,229,255,.35);
+
   transition:.25s;
 }
 
@@ -411,19 +420,11 @@ body {
   transform:scale(1.05);
 }
 
-/* deja espacio superior para que la hamburguesa no tape el contenido */
 .lesson-main{
   padding-top:90px;
 }
 
-/* DESKTOP: menú visible por defecto, usuario puede ocultarlo */
-.lesson-layout{
-  transition:all .3s ease;
-}
-
-.lesson-sidebar{
-  transition:transform .3s ease, opacity .3s ease;
-}
+/* DESKTOP */
 
 .lesson-layout.sidebar-hidden{
   grid-template-columns:0 1fr;
@@ -433,12 +434,20 @@ body {
   transform:translateX(-120%);
   opacity:0;
   pointer-events:none;
-  padding-left:0;
-  padding-right:0;
-  border-right:none;
 }
 
-/* TABLET / MOBILE: menú como panel lateral */
+.lesson-layout{
+  transition:all .3s ease;
+}
+
+.lesson-sidebar{
+  transition:
+    transform .3s ease,
+    opacity .3s ease;
+}
+
+/* MOBILE / TABLET */
+
 @media (max-width:1024px){
 
   .lesson-layout{
@@ -446,6 +455,7 @@ body {
   }
 
   .lesson-sidebar{
+
     position:fixed;
     top:0;
     left:0;
@@ -463,6 +473,7 @@ body {
     pointer-events:none;
 
     background:rgba(15,23,42,.98);
+
     backdrop-filter:blur(14px);
   }
 
@@ -478,9 +489,11 @@ body {
     overflow-y:auto;
     padding-top:90px;
   }
+
 }
 
-/* capa oscura para cerrar menú en tablet/celular */
+/* BACKDROP */
+
 .sidebar-backdrop{
   position:fixed;
   inset:0;
@@ -498,54 +511,4 @@ body {
 .sidebar-backdrop.active{
   opacity:1;
   pointer-events:auto;
-}
-
-/* =========================================
-   FIX HAMBURGUESA: NO TAPAR TITULOS
-   Boton fijo arriba derecha dentro del modal
-========================================= */
-
-.menu-toggle{
-  top:18px !important;
-  left:auto !important;
-  right:22px !important;
-  width:50px !important;
-  height:50px !important;
-  z-index:100000 !important;
-}
-
-/* Da espacio arriba al panel para que no choque con el boton */
-.lesson-sidebar{
-  padding-top:82px !important;
-}
-
-/* Mantiene el contenido con aire visual */
-.lesson-main{
-  padding-top:82px !important;
-}
-
-/* El titulo del sidebar ya no queda debajo del boton */
-.sidebar-title{
-  padding-right:70px;
-}
-
-/* En pantallas pequenas, el boton sigue visible sin tapar el menu */
-@media (max-width:1024px){
-
-  .menu-toggle{
-    top:14px !important;
-    right:14px !important;
-  }
-
-  .lesson-sidebar{
-    padding-top:78px !important;
-  }
-
-  .lesson-main{
-    padding-top:78px !important;
-  }
-
-  .sidebar-title{
-    padding-right:64px;
-  }
 }
