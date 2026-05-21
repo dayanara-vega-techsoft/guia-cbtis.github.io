@@ -1,0 +1,43 @@
+/* =========================================
+   MENU TOGGLE
+========================================= */
+
+.menu-toggle{
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  width: 52px;
+  height: 52px;
+  border:none;
+  border-radius:14px;
+  cursor:pointer;
+  z-index:99999;
+
+  background: linear-gradient(
+    135deg,
+    #00e5ff,
+    #9d4edd
+  );
+
+  color:white;
+  font-size:1.5rem;
+  font-weight:bold;
+
+  box-shadow:
+    0 0 18px rgba(0,229,255,.35),
+    0 0 28px rgba(157,78,221,.25);
+
+  transition:all .3s ease;
+}
+
+.menu-toggle:hover{
+  transform:scale(1.08);
+}
+
+.lesson-sidebar{
+  transition:transform .3s ease;
+}
+
+.lesson-sidebar.sidebar-hidden{
+  transform:translateX(-110%);
+}
