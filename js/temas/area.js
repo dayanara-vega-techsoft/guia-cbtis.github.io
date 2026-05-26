@@ -12,145 +12,427 @@ return `
 .styled-table{width:100%;border-collapse:collapse;margin:18px 0;color:#cbd5e1;}
 .styled-table th,.styled-table td{border:1px solid rgba(255,255,255,.12);padding:12px;text-align:center;}
 .styled-table th{color:#00e5ff;background:rgba(0,229,255,.08);}
-.graph-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:18px;margin:18px 0;}
-.bar-row{display:grid;grid-template-columns:135px 1fr 70px;gap:12px;align-items:center;margin:12px 0;color:#cbd5e1;}
-.bar-track{height:20px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden;}
-.bar-fill{height:100%;background:linear-gradient(90deg,#00e5ff,#9d4edd);border-radius:999px;}
 .shape-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px;}
 .shape-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:18px;color:#cbd5e1;}
 .shape-card h3{color:#00e5ff;margin-bottom:10px;}
 .mini-svg{width:100%;height:140px;margin:10px 0;}
 .square-grid{display:grid;grid-template-columns:repeat(6,32px);gap:4px;margin:18px 0;}
 .square-cell{width:32px;height:32px;background:rgba(0,229,255,.25);border:1px solid rgba(0,229,255,.55);border-radius:5px;}
-.dot-line{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:14px 0;}
-.dot{width:18px;height:18px;border-radius:50%;background:#00e5ff;box-shadow:0 0 10px rgba(0,229,255,.7);}
-.dot.alt{background:#9d4edd;box-shadow:0 0 10px rgba(157,78,221,.7);}
-.coin-row{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0;}
-.coin{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);border:2px solid rgba(0,229,255,.35);color:#fff;font-weight:bold;}
+.compare-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:20px;}
+.compare-card{background:rgba(255,255,255,.05);border-radius:18px;padding:18px;border:1px solid rgba(255,255,255,.08);}
+.compare-card h3{color:#00e5ff;}
+.unit-card{background:rgba(255,255,255,.05);padding:18px;border-radius:18px;border:1px solid rgba(255,255,255,.08);margin:16px 0;color:#cbd5e1;}
 </style>
 
 <div class="topic-shell">
-  <div class="session-header"><h1>📐 Área</h1><p>Matemáticas · Forma, espacio y medida · Páginas 107 - 126</p></div>
 
-  <div class="nav-tabs">
-    <button class="tab-btn active" id="btn-teoria" onclick="switchTab('teoria')">Teoría guiada</button>
-    <button class="tab-btn" id="btn-formulas" onclick="switchTab('formulas')">Fórmulas visuales</button>
-    <button class="tab-btn" id="btn-graficas" onclick="switchTab('graficas')">Gráficas</button>
-    <button class="tab-btn" id="btn-practica" onclick="switchTab('practica')">Práctica CBTIS</button>
-  </div>
-
-  <div class="sub-tab-content active" id="teoria">
-    <div class="subtopic-section">
-      <h2 class="section-h2">Área = medir lo de adentro</h2>
-      <div class="lesson-note">
-        El área mide la superficie que ocupa una figura. Si quieres pintar una pared, poner piso, sembrar pasto o cubrir una mesa, necesitas área.
-        <br><br>
-        La idea básica es contar cuántos cuadritos caben dentro de la figura.
-      </div>
-
-      <div class="square-grid">
-        <div class="square-cell"></div><div class="square-cell"></div><div class="square-cell"></div><div class="square-cell"></div><div class="square-cell"></div><div class="square-cell"></div>
-        <div class="square-cell"></div><div class="square-cell"></div><div class="square-cell"></div><div class="square-cell"></div><div class="square-cell"></div><div class="square-cell"></div>
-        <div class="square-cell"></div><div class="square-cell"></div><div class="square-cell"></div><div class="square-cell"></div><div class="square-cell"></div><div class="square-cell"></div>
-      </div>
-
-      <div class="math-expression">3 filas × 6 columnas = 18 cuadritos</div>
-      <div class="tip-box">🎯 Palabras clave de área: superficie, cubrir, pintar, piso, terreno, sembrar, mosaicos.</div>
-      <div class="trap-box">❌ Trampa CBTIS: si te piden “marco” o “alrededor”, no es área; es perímetro.</div>
-    </div>
-  </div>
-
-  <div class="sub-tab-content" id="formulas">
-    <div class="shape-grid">
-      <div class="shape-card"><h3>▭ Rectángulo</h3><svg class="mini-svg" viewBox="0 0 240 140"><rect x="35" y="35" width="165" height="70" fill="rgba(0,229,255,.15)" stroke="#00e5ff" stroke-width="5"/><text x="100" y="125" fill="#cbd5e1">base</text><text x="205" y="75" fill="#cbd5e1">altura</text></svg><p>A = base × altura</p></div>
-      <div class="shape-card"><h3>⬛ Cuadrado</h3><svg class="mini-svg" viewBox="0 0 220 140"><rect x="65" y="25" width="90" height="90" fill="rgba(157,78,221,.18)" stroke="#9d4edd" stroke-width="5"/></svg><p>A = lado²</p></div>
-      <div class="shape-card"><h3>🔺 Triángulo</h3><svg class="mini-svg" viewBox="0 0 240 140"><polygon points="120,20 45,115 195,115" fill="rgba(0,255,159,.12)" stroke="#00ff9f" stroke-width="5"/><line x1="120" y1="20" x2="120" y2="115" stroke="#cbd5e1" stroke-dasharray="5 5"/><text x="125" y="75" fill="#cbd5e1">h</text><text x="105" y="135" fill="#cbd5e1">base</text></svg><p>A = (base × altura) ÷ 2</p></div>
-      <div class="shape-card"><h3>⭕ Círculo</h3><svg class="mini-svg" viewBox="0 0 220 140"><circle cx="110" cy="70" r="45" fill="rgba(0,229,255,.12)" stroke="#00e5ff" stroke-width="5"/><line x1="110" y1="70" x2="155" y2="70" stroke="#fff" stroke-width="3"/><text x="130" y="64" fill="#cbd5e1">r</text></svg><p>A = πr²</p></div>
-    </div>
-
-    <div class="subtopic-section"><span class="level-badge">Ejemplo guiado</span><h2 class="section-h2">Triángulo de base 12 cm y altura 8 cm</h2><div class="step-list"><div class="step-item">Usa A = (b × h) ÷ 2</div><div class="step-item">A = (12 × 8) ÷ 2</div><div class="step-item">A = 96 ÷ 2 = 48 cm²</div></div></div>
-    <div class="subtopic-section"><span class="level-badge">Ejemplo CBTIS</span><h2 class="section-h2">Un salón mide 9 m por 7 m. ¿Cuántos m² de piso se necesitan?</h2><div class="step-list"><div class="step-item">“Piso” y “cubrir” indican área.</div><div class="step-item">A = 9 × 7</div><div class="step-item">A = 63 m²</div></div></div>
-  </div>
-
-  <div class="sub-tab-content" id="graficas">
-    <div class="graph-card"><h2 class="section-h2">Área de cuadrados</h2><p>El área crece más rápido que el lado porque se eleva al cuadrado.</p>
-      <div class="bar-row"><span>Lado 2</span><div class="bar-track"><div class="bar-fill" style="width:6%"></div></div><span>A=4</span></div>
-      <div class="bar-row"><span>Lado 4</span><div class="bar-track"><div class="bar-fill" style="width:25%"></div></div><span>A=16</span></div>
-      <div class="bar-row"><span>Lado 6</span><div class="bar-track"><div class="bar-fill" style="width:56%"></div></div><span>A=36</span></div>
-      <div class="bar-row"><span>Lado 8</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span>A=64</span></div>
-    </div>
-    <div class="trap-box">Observa la trampa: si el lado se duplica de 4 a 8, el área no se duplica; pasa de 16 a 64.</div>
-  </div>
-
-  <div class="sub-tab-content" id="practica">
-    <div class="quiz-card">
-  <div class="quiz-question">1. Área de un rectángulo de 16 m por 5 m:</div>
-  <label class="option-item"><input type="radio" name="area1" value="a"> 21 m²</label>
-<label class="option-item"><input type="radio" name="area1" value="b"> 42 m²</label>
-<label class="option-item"><input type="radio" name="area1" value="c"> 80 m²</label>
-<label class="option-item"><input type="radio" name="area1" value="d"> 160 m²</label>
-  <button class="btn-verify" onclick="verifyFormaV2('area1','c','feedback-area1','A=16×5=80 m².')">Verificar</button>
-  <div class="feedback" id="feedback-area1"></div>
+<div class="session-header">
+<h1>📐 Área</h1>
+<p>Matemáticas · Forma, espacio y medida · Páginas 107 - 126</p>
 </div>
-    <div class="quiz-card">
-  <div class="quiz-question">2. Área de un cuadrado de lado 13 cm:</div>
-  <label class="option-item"><input type="radio" name="area2" value="a"> 52 cm²</label>
-<label class="option-item"><input type="radio" name="area2" value="b"> 169 cm²</label>
-<label class="option-item"><input type="radio" name="area2" value="c"> 26 cm²</label>
-<label class="option-item"><input type="radio" name="area2" value="d"> 130 cm²</label>
-  <button class="btn-verify" onclick="verifyFormaV2('area2','b','feedback-area2','A=13²=169 cm².')">Verificar</button>
-  <div class="feedback" id="feedback-area2"></div>
+
+<div class="nav-tabs">
+<button class="tab-btn active" onclick="switchTab('teoria')">Teoría guiada</button>
+<button class="tab-btn" onclick="switchTab('formulas')">Fórmulas visuales</button>
+<button class="tab-btn" onclick="switchTab('comparacion')">Área vs perímetro</button>
+<button class="tab-btn" onclick="switchTab('practica')">Práctica CBTIS</button>
+<button class="tab-btn" onclick="switchTab('retos')">Retos EDIEMS</button>
 </div>
-    <div class="quiz-card">
-  <div class="quiz-question">3. Área de un triángulo con base 18 y altura 6:</div>
-  <label class="option-item"><input type="radio" name="area3" value="a"> 108</label>
-<label class="option-item"><input type="radio" name="area3" value="b"> 54</label>
-<label class="option-item"><input type="radio" name="area3" value="c"> 24</label>
-<label class="option-item"><input type="radio" name="area3" value="d"> 36</label>
-  <button class="btn-verify" onclick="verifyFormaV2('area3','b','feedback-area3','A=(18×6)÷2=108÷2=54.')">Verificar</button>
-  <div class="feedback" id="feedback-area3"></div>
+
+<div class="sub-tab-content active" id="teoria">
+
+<div class="subtopic-section">
+
+<h2 class="section-h2">¿Qué es el área?</h2>
+
+<div class="lesson-note">
+El área mide la superficie que ocupa una figura.
+Sirve para saber cuánto espacio hay dentro de algo.
 </div>
-    <div class="quiz-card">
-  <div class="quiz-question">4. ¿Qué palabra clave indica área?</div>
-  <label class="option-item"><input type="radio" name="area4" value="a"> Rodear</label>
-<label class="option-item"><input type="radio" name="area4" value="b"> Marco</label>
-<label class="option-item"><input type="radio" name="area4" value="c"> Cubrir</label>
-<label class="option-item"><input type="radio" name="area4" value="d"> Contorno</label>
-  <button class="btn-verify" onclick="verifyFormaV2('area4','c','feedback-area4','Cubrir indica superficie.')">Verificar</button>
-  <div class="feedback" id="feedback-area4"></div>
+
+<div class="tip-box">
+💡 Piensa en:
+<ul>
+<li>Pintar una pared</li>
+<li>Poner piso</li>
+<li>Sembrar pasto</li>
+<li>Colocar azulejos</li>
+</ul>
+Todo eso necesita calcular área.
 </div>
-    <div class="quiz-card">
-  <div class="quiz-question">5. Un terreno rectangular mide 30 m por 14 m. ¿Cuál es su superficie?</div>
-  <label class="option-item"><input type="radio" name="area5" value="a"> 44 m²</label>
-<label class="option-item"><input type="radio" name="area5" value="b"> 420 m²</label>
-<label class="option-item"><input type="radio" name="area5" value="c"> 88 m²</label>
-<label class="option-item"><input type="radio" name="area5" value="d"> 840 m²</label>
-  <button class="btn-verify" onclick="verifyFormaV2('area5','b','feedback-area5','Superficie es área: 30×14=420 m².')">Verificar</button>
-  <div class="feedback" id="feedback-area5"></div>
+
+<div class="square-grid">
+<div class="square-cell"></div><div class="square-cell"></div><div class="square-cell"></div><div class="square-cell"></div><div class="square-cell"></div><div class="square-cell"></div>
+<div class="square-cell"></div><div class="square-cell"></div><div class="square-cell"></div><div class="square-cell"></div><div class="square-cell"></div><div class="square-cell"></div>
+<div class="square-cell"></div><div class="square-cell"></div><div class="square-cell"></div><div class="square-cell"></div><div class="square-cell"></div><div class="square-cell"></div>
 </div>
-    <div class="quiz-card">
-  <div class="quiz-question">6. Detecta el error: Para pintar una pared de 4 m por 3 m, un alumno calculó 2(4)+2(3).</div>
-  <label class="option-item"><input type="radio" name="area6" value="a"> Usó perímetro en vez de área</label>
-<label class="option-item"><input type="radio" name="area6" value="b"> Está correcto</label>
-<label class="option-item"><input type="radio" name="area6" value="c"> Faltó dividir entre 2</label>
-<label class="option-item"><input type="radio" name="area6" value="d"> Usó cm en lugar de m</label>
-  <button class="btn-verify" onclick="verifyFormaV2('area6','a','feedback-area6','Pintar pared indica área: 4×3=12 m².')">Verificar</button>
-  <div class="feedback" id="feedback-area6"></div>
+
+<div class="math-expression">
+18 cuadritos = área de 18 unidades cuadradas
 </div>
-  </div>
-</div>`;
+
+</div>
+
+<div class="subtopic-section">
+
+<h2 class="section-h2">📏 Unidades cuadradas</h2>
+
+<div class="unit-card">
+Cuando hablamos de área usamos unidades cuadradas:
+</div>
+
+<table class="styled-table">
+<tr>
+<th>Unidad</th>
+<th>Significado</th>
+</tr>
+
+<tr>
+<td>cm²</td>
+<td>Centímetros cuadrados</td>
+</tr>
+
+<tr>
+<td>m²</td>
+<td>Metros cuadrados</td>
+</tr>
+
+<tr>
+<td>km²</td>
+<td>Kilómetros cuadrados</td>
+</tr>
+
+</table>
+
+<div class="tip-box">
+🎯 1 m² significa:
+un cuadrado de 1 metro × 1 metro.
+</div>
+
+<div class="trap-box">
+❌ Error común:
+confundir m² con metros normales.
+</div>
+
+</div>
+
+<div class="subtopic-section">
+
+<h2 class="section-h2">⭕ El círculo</h2>
+
+<div class="lesson-note">
+Para calcular el área de un círculo usamos:
+</div>
+
+<div class="math-expression">
+A = πr²
+</div>
+
+<div class="step-list">
+
+<div class="step-item">
+π ≈ 3.14
+</div>
+
+<div class="step-item">
+r = radio
+</div>
+
+<div class="step-item">
+El radio va del centro al borde.
+</div>
+
+</div>
+
+<div class="tip-box">
+🎯 El diámetro es el doble del radio.
+</div>
+
+</div>
+
+</div>
+
+<div class="sub-tab-content" id="formulas">
+
+<div class="shape-grid">
+
+<div class="shape-card">
+<h3>▭ Rectángulo</h3>
+<p>A = base × altura</p>
+</div>
+
+<div class="shape-card">
+<h3>⬛ Cuadrado</h3>
+<p>A = lado²</p>
+</div>
+
+<div class="shape-card">
+<h3>🔺 Triángulo</h3>
+<p>A = (base × altura) ÷ 2</p>
+</div>
+
+<div class="shape-card">
+<h3>⭕ Círculo</h3>
+<p>A = πr²</p>
+</div>
+
+</div>
+
+<div class="subtopic-section">
+
+<span class="level-badge">Ejemplo guiado</span>
+
+<h2 class="section-h2">
+Rectángulo
+</h2>
+
+<div class="step-list">
+
+<div class="step-item">
+Base = 9
+</div>
+
+<div class="step-item">
+Altura = 5
+</div>
+
+<div class="step-item">
+A = 9 × 5 = 45
+</div>
+
+</div>
+
+</div>
+
+<div class="subtopic-section">
+
+<span class="level-badge">Ejemplo CBTIS</span>
+
+<h2 class="section-h2">
+Área de un círculo de radio 4
+</h2>
+
+<div class="step-list">
+
+<div class="step-item">
+A = πr²
+</div>
+
+<div class="step-item">
+A = 3.14 × 4²
+</div>
+
+<div class="step-item">
+A = 3.14 × 16
+</div>
+
+<div class="step-item">
+A = 50.24
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="sub-tab-content" id="comparacion">
+
+<h2 class="section-h2">
+🚨 Área vs perímetro
+</h2>
+
+<div class="compare-grid">
+
+<div class="compare-card">
+<h3>📐 Área</h3>
+
+<ul>
+<li>Superficie</li>
+<li>Lo de adentro</li>
+<li>Pintar</li>
+<li>Piso</li>
+<li>Pasto</li>
+<li>Cubrir</li>
+</ul>
+
+</div>
+
+<div class="compare-card">
+<h3>📏 Perímetro</h3>
+
+<ul>
+<li>Contorno</li>
+<li>Lo de afuera</li>
+<li>Cerca</li>
+<li>Marco</li>
+<li>Listón</li>
+<li>Rodear</li>
+</ul>
+
+</div>
+
+</div>
+
+<div class="trap-box">
+❌ Trampa CBTIS:
+muchos alumnos usan perímetro cuando el problema pide superficie.
+</div>
+
+</div>
+
+<div class="sub-tab-content" id="practica">
+
+<div class="quiz-card">
+<div class="quiz-question">
+1. ¿Qué mide el área?
+</div>
+
+<label class="option-item"><input type="radio" name="a1" value="a"> El contorno</label>
+<label class="option-item"><input type="radio" name="a1" value="b"> La superficie</label>
+<label class="option-item"><input type="radio" name="a1" value="c"> El volumen</label>
+<label class="option-item"><input type="radio" name="a1" value="d"> La altura</label>
+
+<button class="btn-verify" onclick="verifyArea('a1','b','fa1','El área mide la superficie.')">Verificar</button>
+
+<div class="feedback" id="fa1"></div>
+
+</div>
+
+<div class="quiz-card">
+<div class="quiz-question">
+2. Área de un rectángulo de 8 × 6
+</div>
+
+<label class="option-item"><input type="radio" name="a2" value="a"> 14</label>
+<label class="option-item"><input type="radio" name="a2" value="b"> 28</label>
+<label class="option-item"><input type="radio" name="a2" value="c"> 48</label>
+<label class="option-item"><input type="radio" name="a2" value="d"> 96</label>
+
+<button class="btn-verify" onclick="verifyArea('a2','c','fa2','8 × 6 = 48.')">Verificar</button>
+
+<div class="feedback" id="fa2"></div>
+
+</div>
+
+<div class="quiz-card">
+<div class="quiz-question">
+3. ¿Qué fórmula corresponde al círculo?
+</div>
+
+<label class="option-item"><input type="radio" name="a3" value="a"> base × altura</label>
+<label class="option-item"><input type="radio" name="a3" value="b"> lado²</label>
+<label class="option-item"><input type="radio" name="a3" value="c"> πr²</label>
+<label class="option-item"><input type="radio" name="a3" value="d"> (b×h)/2</label>
+
+<button class="btn-verify" onclick="verifyArea('a3','c','fa3','El círculo usa πr².')">Verificar</button>
+
+<div class="feedback" id="fa3"></div>
+
+</div>
+
+<div class="quiz-card">
+<div class="quiz-question">
+4. ¿Qué situación usa área?
+</div>
+
+<label class="option-item"><input type="radio" name="a4" value="a"> Poner una cerca</label>
+<label class="option-item"><input type="radio" name="a4" value="b"> Colocar un marco</label>
+<label class="option-item"><input type="radio" name="a4" value="c"> Pintar una pared</label>
+<label class="option-item"><input type="radio" name="a4" value="d"> Rodear un jardín</label>
+
+<button class="btn-verify" onclick="verifyArea('a4','c','fa4','Pintar requiere superficie.')">Verificar</button>
+
+<div class="feedback" id="fa4"></div>
+
+</div>
+
+<div class="quiz-card">
+<div class="quiz-question">
+5. Área de un triángulo base 10 y altura 8
+</div>
+
+<label class="option-item"><input type="radio" name="a5" value="a"> 80</label>
+<label class="option-item"><input type="radio" name="a5" value="b"> 40</label>
+<label class="option-item"><input type="radio" name="a5" value="c"> 18</label>
+<label class="option-item"><input type="radio" name="a5" value="d"> 20</label>
+
+<button class="btn-verify" onclick="verifyArea('a5','b','fa5','(10×8)/2 = 40.')">Verificar</button>
+
+<div class="feedback" id="fa5"></div>
+
+</div>
+
+</div>
+
+<div class="sub-tab-content" id="retos">
+
+<div class="quiz-card">
+
+<div class="quiz-question">
+🎮 Reto CBTIS:
+Un jardín rectangular mide 12 m de largo y 9 m de ancho.
+¿Cuántos metros cuadrados de pasto se necesitan?
+</div>
+
+<label class="option-item"><input type="radio" name="reto1" value="a"> 21</label>
+<label class="option-item"><input type="radio" name="reto1" value="b"> 42</label>
+<label class="option-item"><input type="radio" name="reto1" value="c"> 108</label>
+<label class="option-item"><input type="radio" name="reto1" value="d"> 216</label>
+
+<button class="btn-verify" onclick="verifyArea('reto1','c','freto1','12 × 9 = 108 m².')">Verificar</button>
+
+<div class="feedback" id="freto1"></div>
+
+</div>
+
+<div class="quiz-card">
+
+<div class="quiz-question">
+🧠 Detecta el dato innecesario:
+Un terreno mide 15 m de base,
+8 m de altura
+y pesa 300 kg.
+¿Qué dato no sirve?
+</div>
+
+<label class="option-item"><input type="radio" name="reto2" value="a"> 15 m</label>
+<label class="option-item"><input type="radio" name="reto2" value="b"> 8 m</label>
+<label class="option-item"><input type="radio" name="reto2" value="c"> 300 kg</label>
+<label class="option-item"><input type="radio" name="reto2" value="d"> Todos sirven</label>
+
+<button class="btn-verify" onclick="verifyArea('reto2','c','freto2','El peso no sirve para calcular área.')">Verificar</button>
+
+<div class="feedback" id="freto2"></div>
+
+</div>
+
+</div>
+
+</div>
+`;
 }
 
-function verifyFormaV2(name, correct, feedbackId, explanation){
-  const selected = document.querySelector(`input[name="${name}"]:checked`);
-  const feedback = document.getElementById(feedbackId);
-  if(!selected){ alert("Selecciona una respuesta."); return; }
-  if(selected.value === correct){
-    feedback.className = "feedback correct";
-    feedback.innerHTML = "✅ Correcto. " + explanation;
-  }else{
-    feedback.className = "feedback incorrect";
-    feedback.innerHTML = "❌ Revisa con calma. " + explanation;
-  }
+window.renderArea = renderArea;
+
+function verifyArea(name,correct,feedbackId,explanation){
+
+const s=document.querySelector(`input[name="${name}"]:checked`);
+const f=document.getElementById(feedbackId);
+
+if(!s){
+alert("Selecciona una respuesta.");
+return;
 }
 
+if(s.value===correct){
+f.className="feedback correct";
+f.innerHTML="✅ Correcto. "+explanation;
+}else{
+f.className="feedback incorrect";
+f.innerHTML="❌ Revisa nuevamente. "+explanation;
+}
+
+}
+
+window.verifyArea = verifyArea;

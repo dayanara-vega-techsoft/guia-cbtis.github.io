@@ -49,7 +49,6 @@ function closeLesson(){
 
 
 function openTopicFromMenu(event, pageId){
-
   if(event){
     event.preventDefault();
     event.stopPropagation();

@@ -1,369 +1,632 @@
+
 function renderDocumentos(){
 return `
-<style>
-.answer-area{
-  width:100%;
-  margin-top:10px;
-  margin-bottom:14px;
-  padding:14px;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,.12);
-  background:rgba(255,255,255,.06);
-  color:#cbd5e1;
-  resize:vertical;
-  font-family:inherit;
-}
-.answer-area::placeholder{
-  color:rgba(203,213,225,.65);
-}
-.doc-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:18px;
-  margin-top:20px;
-}
-.doc-card{
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:18px;
-  padding:20px;
-}
-.doc-card h3{
-  color:#00e5ff;
-  margin-bottom:10px;
-}
-.doc-card p{
-  color:#cbd5e1;
-  line-height:1.7;
-}
-.matching-row{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-  margin-bottom:12px;
-}
-.matching-select{
-  width:100%;
-  padding:14px;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,.12);
-  background:#111827;
-  color:#cbd5e1;
-}
-@media(max-width:900px){
-  .matching-row{
-    grid-template-columns:1fr;
-  }
-}
-</style>
-
 <div class="topic-shell">
 
-  <div class="session-header">
-    <h1>📂 Tipos de documentos</h1>
-    <p>Sesión 1 · Páginas 12 - 18</p>
-  </div>
+<div class="session-header">
+<h1>📂 Tipos de documentos</h1>
+<p>Sesión 1 · Páginas 12 - 18</p>
+</div>
 
-  <div class="nav-tabs">
-    <button class="tab-btn active" id="btn-teoria" onclick="switchTab('teoria')">1.1 Teoría</button>
-    <button class="tab-btn" id="btn-lecturas" onclick="switchTab('lecturas')">1.2 Lecturas prácticas</button>
-    <button class="tab-btn" id="btn-evaluacion" onclick="switchTab('evaluacion')">1.3 Taller de evaluación</button>
-  </div>
+<div class="nav-tabs">
+<button class="tab-btn active" id="btn-teoria" onclick="switchTab('teoria')">1.1 Teoría</button>
+<button class="tab-btn" id="btn-lecturas" onclick="switchTab('lecturas')">1.2 Lecturas prácticas</button>
+<button class="tab-btn" id="btn-evaluacion" onclick="switchTab('evaluacion')">1.3 Taller de evaluación</button>
+</div>
 
-  <!-- TEORIA -->
+<!-- =========================
+TEORÍA
+========================= -->
 
-  <div class="sub-tab-content active" id="teoria">
+<div class="sub-tab-content active" id="teoria">
 
-    <div class="subtopic-section">
-      <span class="subtopic-header-tag">Concepto principal</span>
+<div class="subtopic-section">
 
-      <h2 class="section-h2">¿Qué son los documentos?</h2>
+<span class="subtopic-header-tag">
+✉️ La carta
+</span>
 
-      <p>
-        Los documentos son textos que contienen información organizada
-        y que tienen una finalidad específica dependiendo de su uso.
-      </p>
+<h2 class="section-h2">
+¿Qué es una carta?
+</h2>
 
-      <div class="important-box">
-        Cada documento tiene una estructura y propósito diferente:
-        informar, registrar, identificar, solicitar o comunicar.
-      </div>
+<p>
+La carta es un recurso que sirve para transmitir información.
+Permite comunicar mensajes entre un remitente y un destinatario.
+</p>
 
-      <div class="doc-grid">
+<p>
+Aunque actualmente existen correos electrónicos y mensajes instantáneos,
+la carta sigue siendo importante porque organiza la información
+de manera clara y estructurada.
+</p>
 
-        <div class="doc-card">
-          <h3>🪪 Documentos personales</h3>
-          <p>
-            Identifican a una persona y contienen datos personales.
-          </p>
-        </div>
+<div class="important-box">
+💡 Idea sencilla:
+una carta es como un mensaje largo y organizado que se escribe
+para informar, agradecer, invitar, solicitar o comunicar algo importante.
+</div>
 
-        <div class="doc-card">
-          <h3>📄 Documentos administrativos</h3>
-          <p>
-            Se utilizan para trámites, solicitudes o registros oficiales.
-          </p>
-        </div>
+</div>
 
-        <div class="doc-card">
-          <h3>📰 Documentos informativos</h3>
-          <p>
-            Transmiten información o noticias al público.
-          </p>
-        </div>
+<div class="subtopic-section">
 
-        <div class="doc-card">
-          <h3>📚 Documentos académicos</h3>
-          <p>
-            Presentan investigaciones, tareas o actividades escolares.
-          </p>
-        </div>
+<span class="subtopic-header-tag">
+📨 Elementos básicos
+</span>
 
-      </div>
-    </div>
+<h2 class="section-h2">
+Remitente y destinatario
+</h2>
 
-    <div class="subtopic-section">
+<div class="map-container">
 
-      <span class="subtopic-header-tag">Características</span>
+<div class="map-branches">
 
-      <h2 class="section-h2">Elementos de los documentos</h2>
+<div class="map-branch">
+<div class="branch-title">👤 Remitente</div>
+<div class="map-leaf">
+Es la persona que escribe y envía la carta.
+</div>
+</div>
 
-      <h3 class="section-h3">📌 Encabezado</h3>
-      <p>Identifica el documento y proporciona información principal.</p>
+<div class="map-branch">
+<div class="branch-title">📬 Destinatario</div>
+<div class="map-leaf">
+Es la persona o institución que recibe el mensaje.
+</div>
+</div>
 
-      <h3 class="section-h3">📝 Cuerpo</h3>
-      <p>Contiene la información o mensaje principal.</p>
+</div>
 
-      <h3 class="section-h3">✍️ Firma o validación</h3>
-      <p>Da autenticidad al documento.</p>
+</div>
 
-      <h3 class="section-h3">📅 Fecha</h3>
-      <p>Indica cuándo fue elaborado o emitido.</p>
+</div>
 
-    </div>
+<div class="subtopic-section">
 
-  </div>
+<span class="subtopic-header-tag">
+⚖️ Tipos de carta
+</span>
 
-  <!-- LECTURAS -->
+<h2 class="section-h2">
+Carta formal e informal
+</h2>
 
-  <div class="sub-tab-content" id="lecturas">
+<p>
+Las cartas pueden clasificarse en formales e informales.
+La diferencia principal depende de la relación entre el remitente
+y el destinatario.
+</p>
 
-    <div class="text-panel">
+<div class="map-container">
 
-      <div class="text-title">
-        📄 Ejemplo de documento administrativo
-      </div>
+<div class="map-branches">
 
-      <div class="text-body">
+<div class="map-branch">
+<div class="branch-title">🏫 Carta formal</div>
 
-SOLICITUD DE CONSTANCIA
+<div class="map-leaf">
+Usa lenguaje formal y respetuoso.
+</div>
 
-Ciudad de México, 25 de marzo de 2024.
+<div class="map-leaf">
+Tiene estructura organizada y predeterminada.
+</div>
 
-Por medio de la presente solicito una constancia de estudios
-para realizar mi trámite de inscripción en la universidad.
+<div class="map-leaf">
+Se utiliza para trámites, asuntos laborales,
+servicios o comunicación institucional.
+</div>
+
+<div class="map-leaf">
+Ejemplo: carta dirigida al director de una escuela.
+</div>
+</div>
+
+<div class="map-branch">
+<div class="branch-title">👨‍👩‍👧 Carta informal</div>
+
+<div class="map-leaf">
+Usa lenguaje cercano y personal.
+</div>
+
+<div class="map-leaf">
+La estructura puede ser más libre.
+</div>
+
+<div class="map-leaf">
+Se usa entre amigos o familiares.
+</div>
+
+<div class="map-leaf">
+Ejemplo: carta para un familiar o amigo.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subtopic-section">
+
+<span class="subtopic-header-tag">
+🧩 Partes de la carta formal
+</span>
+
+<h2 class="section-h2">
+Elementos importantes
+</h2>
+
+<div class="map-container">
+
+<div class="map-branches">
+
+<div class="map-branch">
+<div class="branch-title">🏷️ Membrete</div>
+<div class="map-leaf">
+Datos de la institución o empresa.
+</div>
+</div>
+
+<div class="map-branch">
+<div class="branch-title">📍 Lugar y fecha</div>
+<div class="map-leaf">
+Indican dónde y cuándo se escribió.
+</div>
+</div>
+
+<div class="map-branch">
+<div class="branch-title">👤 Destinatario</div>
+<div class="map-leaf">
+Persona o institución a quien se dirige.
+</div>
+</div>
+
+<div class="map-branch">
+<div class="branch-title">👋 Saludo</div>
+<div class="map-leaf">
+Forma respetuosa de iniciar la carta.
+</div>
+</div>
+
+<div class="map-branch">
+<div class="branch-title">📝 Cuerpo</div>
+<div class="map-leaf">
+Contiene el mensaje principal.
+</div>
+</div>
+
+<div class="map-branch">
+<div class="branch-title">🔵 Despedida</div>
+<div class="map-leaf">
+Cierre cordial del mensaje.
+</div>
+</div>
+
+<div class="map-branch">
+<div class="branch-title">✍️ Firma</div>
+<div class="map-leaf">
+Nombre y firma de quien escribe.
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="important-box">
+🎯 Tip CBTIS / EDIEMS:
+en el examen suelen pedir identificar las partes
+de una carta formal.
+</div>
+
+</div>
+
+<div class="subtopic-section">
+
+<span class="subtopic-header-tag">
+🏗️ Estructura
+</span>
+
+<h2 class="section-h2">
+Estructura externa e interna
+</h2>
+
+<div class="map-container">
+
+<div class="map-branches">
+
+<div class="map-branch">
+<div class="branch-title">📐 Estructura externa</div>
+
+<div class="map-leaf">
+Es la organización visual del texto.
+</div>
+
+<div class="map-leaf">
+Incluye introducción, cuerpo y cierre.
+</div>
+
+</div>
+
+<div class="map-branch">
+<div class="branch-title">🧠 Estructura interna</div>
+
+<div class="map-leaf">
+Es el contenido del mensaje.
+</div>
+
+<div class="map-leaf">
+Incluye ideas, emociones y coherencia.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- =========================
+LECTURAS
+========================= -->
+
+<div class="sub-tab-content" id="lecturas">
+
+<div class="subtopic-section">
+
+<span class="subtopic-header-tag">
+📄 Lectura práctica 1
+</span>
+
+<h2 class="section-h2">
+Carta formal
+</h2>
+
+<div class="text-panel">
+
+<div class="text-title">
+Carta adaptada de la guía
+</div>
+
+<div class="text-body">
+Ensenada, Baja California, a 18 de junio de 2023.
+
+Dr. Juan Luis Pallares Cruz
+Director General
+Editorial Hexágono
+
+Distinguido Director:
+
+Me dirijo a usted con el propósito de informar
+sobre la situación actual de Imprenta Épsilon
+y explorar posibilidades de colaboración.
 
 Atentamente:
-Juan Pérez Martínez
+Jaime Rodrigo Bastida Morillo
+Director General
+</div>
 
-      </div>
+</div>
 
-    </div>
+<div class="quiz-card">
 
-    <div class="text-panel">
+<div class="quiz-question">
+¿Qué característica muestra que esta carta es formal?
+</div>
 
-      <div class="text-title">
-        📰 Ejemplo de documento informativo
-      </div>
+<label class="option-item">
+<input type="radio" name="lect1" value="a">
+A) Usa lenguaje respetuoso
+</label>
 
-      <div class="text-body">
+<label class="option-item">
+<input type="radio" name="lect1" value="b">
+B) Tiene lenguaje de amistad
+</label>
 
-La Secretaría de Educación anunció nuevas estrategias
-para fortalecer la comprensión lectora en estudiantes de nivel medio superior.
+<label class="option-item">
+<input type="radio" name="lect1" value="c">
+C) No tiene saludo
+</label>
 
-El programa incluirá actividades digitales, lecturas guiadas
-y evaluaciones interactivas.
+<label class="option-item">
+<input type="radio" name="lect1" value="d">
+D) Tiene personajes fantásticos
+</label>
 
-      </div>
+<button class="btn-verify" onclick="verifyLect1()">
+Revisar respuesta
+</button>
 
-    </div>
+<div class="feedback" id="feedback-lect1"></div>
 
-    <div class="text-panel">
+</div>
 
-      <div class="text-title">
-        🪪 Ejemplo de documento personal
-      </div>
+</div>
 
-      <div class="text-body">
+<div class="subtopic-section">
 
-CREDENCIAL ESCOLAR
+<span class="subtopic-header-tag">
+💌 Lectura práctica 2
+</span>
 
-Nombre: María Fernanda López
-Institución: Preparatoria Estatal No. 12
-Matrícula: 202400145
+<h2 class="section-h2">
+Carta informal
+</h2>
 
-      </div>
+<div class="text-panel">
 
-    </div>
+<div class="text-title">
+Carta familiar
+</div>
 
-  </div>
+<div class="text-body">
+Queridos papá y mamá:
 
-  <!-- EVALUACION -->
+Espero que se encuentren muy bien.
+Amanda y yo estamos disfrutando mucho
+nuestro viaje en Los Cabos.
 
-  <div class="sub-tab-content" id="evaluacion">
+Los extrañamos mucho y queríamos compartirles
+lo felices que estamos.
 
-    <div class="subtopic-section">
-      <span class="subtopic-header-tag">Taller oficial</span>
+Con cariño,
+Su hijo.
+</div>
 
-      <h2 class="section-h2">
-        Evaluación: Tipos de documentos
-      </h2>
+</div>
 
-      <p>
-        Resuelve las siguientes actividades sobre documentos
-        personales, administrativos e informativos.
-      </p>
-    </div>
+<div class="quiz-card">
 
-    <div class="quiz-card">
+<div class="quiz-question">
+¿Por qué esta carta es informal?
+</div>
 
-      <div class="quiz-question">
-        1. ¿Cuál es la finalidad principal de un documento administrativo?
-      </div>
+<label class="option-item">
+<input type="radio" name="lect2" value="a">
+A) Porque está dirigida a familiares
+</label>
 
-      <label class="option-item">
-        <input type="radio" name="doc1" value="a">
-        A) Narrar una historia
-      </label>
+<label class="option-item">
+<input type="radio" name="lect2" value="b">
+B) Porque es un contrato
+</label>
 
-      <label class="option-item">
-        <input type="radio" name="doc1" value="b">
-        B) Realizar trámites o solicitudes
-      </label>
+<label class="option-item">
+<input type="radio" name="lect2" value="c">
+C) Porque tiene datos empresariales
+</label>
 
-      <label class="option-item">
-        <input type="radio" name="doc1" value="c">
-        C) Expresar emociones
-      </label>
+<label class="option-item">
+<input type="radio" name="lect2" value="d">
+D) Porque usa tablas
+</label>
 
-      <button class="btn-verify" onclick="verifyDoc1()">
-        Verificar
-      </button>
+<button class="btn-verify" onclick="verifyLect2()">
+Revisar respuesta
+</button>
 
-      <div class="feedback" id="feedback-doc1"></div>
+<div class="feedback" id="feedback-lect2"></div>
 
-    </div>
+</div>
 
-    <div class="quiz-card">
+</div>
 
-      <div class="quiz-question">
-        2. Relaciona el tipo de documento con su función.
-      </div>
+</div>
 
-      <div class="matching-row">
-        <div class="option-item">🪪 Documento personal</div>
+<!-- =========================
+EVALUACIÓN
+========================= -->
 
-        <select class="matching-select" id="match-doc1">
-          <option value="">Selecciona</option>
-          <option value="a">Identificar a una persona</option>
-          <option value="b">Difundir noticias</option>
-          <option value="c">Realizar trámites</option>
-        </select>
-      </div>
+<div class="sub-tab-content" id="evaluacion">
 
-      <div class="matching-row">
-        <div class="option-item">📄 Documento administrativo</div>
+<div class="subtopic-section">
 
-        <select class="matching-select" id="match-doc2">
-          <option value="">Selecciona</option>
-          <option value="a">Identificar a una persona</option>
-          <option value="b">Difundir noticias</option>
-          <option value="c">Realizar trámites</option>
-        </select>
-      </div>
+<span class="subtopic-header-tag">
+📝 Taller CBTIS / EDIEMS
+</span>
 
-      <div class="matching-row">
-        <div class="option-item">📰 Documento informativo</div>
+<h2 class="section-h2">
+Evaluación práctica
+</h2>
 
-        <select class="matching-select" id="match-doc3">
-          <option value="">Selecciona</option>
-          <option value="a">Identificar a una persona</option>
-          <option value="b">Difundir noticias</option>
-          <option value="c">Realizar trámites</option>
-        </select>
-      </div>
+<p>
+Responde las siguientes preguntas basadas
+en las páginas 12 a 18 de la guía.
+</p>
 
-      <button class="btn-verify" onclick="verifyMatchingDocs()">
-        Verificar relación
-      </button>
+</div>
 
-      <div class="feedback" id="feedback-matching-docs"></div>
+<div class="quiz-card">
 
-    </div>
+<div class="quiz-question">
+1. ¿Qué es una carta?
+</div>
 
-    <div class="quiz-card">
+<label class="option-item">
+<input type="radio" name="q1" value="a">
+A) Un recurso para transmitir información
+</label>
 
-      <div class="quiz-question">
-        3. ¿Qué elementos debe contener un documento?
-      </div>
+<label class="option-item">
+<input type="radio" name="q1" value="b">
+B) Un poema musical
+</label>
 
-      <textarea class="answer-area"
-        placeholder="Escribe los elementos principales del documento..."
-        rows="5"></textarea>
+<label class="option-item">
+<input type="radio" name="q1" value="c">
+C) Una tabla estadística
+</label>
 
-      <div class="important-box">
-        Pista: piensa en encabezado, cuerpo, firma y fecha.
-      </div>
+<label class="option-item">
+<input type="radio" name="q1" value="d">
+D) Un texto sin destinatario
+</label>
 
-    </div>
+<button class="btn-verify" onclick="verifyQ1()">
+Revisar respuesta
+</button>
 
-  </div>
+<div class="feedback" id="feedback-q1"></div>
+
+</div>
+
+<div class="quiz-card">
+
+<div class="quiz-question">
+2. ¿Quién es el remitente?
+</div>
+
+<label class="option-item">
+<input type="radio" name="q2" value="a">
+A) Quien recibe la carta
+</label>
+
+<label class="option-item">
+<input type="radio" name="q2" value="b">
+B) Quien escribe y envía la carta
+</label>
+
+<label class="option-item">
+<input type="radio" name="q2" value="c">
+C) El lugar donde se imprime
+</label>
+
+<label class="option-item">
+<input type="radio" name="q2" value="d">
+D) El título del documento
+</label>
+
+<button class="btn-verify" onclick="verifyQ2()">
+Revisar respuesta
+</button>
+
+<div class="feedback" id="feedback-q2"></div>
+
+</div>
+
+<div class="quiz-card">
+
+<div class="quiz-question">
+3. ¿Qué característica tiene una carta formal?
+</div>
+
+<label class="option-item">
+<input type="radio" name="q3" value="a">
+A) Usa lenguaje respetuoso
+</label>
+
+<label class="option-item">
+<input type="radio" name="q3" value="b">
+B) Usa lenguaje de confianza
+</label>
+
+<label class="option-item">
+<input type="radio" name="q3" value="c">
+C) No tiene estructura
+</label>
+
+<label class="option-item">
+<input type="radio" name="q3" value="d">
+D) Siempre es corta
+</label>
+
+<button class="btn-verify" onclick="verifyQ3()">
+Revisar respuesta
+</button>
+
+<div class="feedback" id="feedback-q3"></div>
+
+</div>
+
+<div class="quiz-card">
+
+<div class="quiz-question">
+4. ¿Cuál es una parte de la carta formal?
+</div>
+
+<label class="option-item">
+<input type="radio" name="q4" value="a">
+A) Destinatario
+</label>
+
+<label class="option-item">
+<input type="radio" name="q4" value="b">
+B) Villano
+</label>
+
+<label class="option-item">
+<input type="radio" name="q4" value="c">
+C) Escenario fantástico
+</label>
+
+<label class="option-item">
+<input type="radio" name="q4" value="d">
+D) Rima
+</label>
+
+<button class="btn-verify" onclick="verifyQ4()">
+Revisar respuesta
+</button>
+
+<div class="feedback" id="feedback-q4"></div>
+
+</div>
+
+</div>
 
 </div>
 `;
 }
 
-function verifyDoc1(){
+function verifySimple(name,correct,id,msg){
 
-  const selected = document.querySelector('input[name="doc1"]:checked');
-  const feedback = document.getElementById("feedback-doc1");
+const selected = document.querySelector(`input[name="${name}"]:checked`);
+const feedback = document.getElementById(id);
 
-  if(!selected){
-    alert("Selecciona una opción.");
-    return;
-  }
-
-  if(selected.value === "b"){
-    feedback.className = "feedback correct";
-    feedback.innerHTML = "✅ Correcto. Los documentos administrativos se utilizan para trámites y solicitudes.";
-  }else{
-    feedback.className = "feedback incorrect";
-    feedback.innerHTML = "❌ Incorrecto. Revisa la finalidad de los documentos administrativos.";
-  }
+if(!selected){
+alert("Selecciona una opción.");
+return;
 }
 
-function verifyMatchingDocs(){
+if(selected.value===correct){
+feedback.className="feedback correct";
+feedback.innerHTML=msg;
+}else{
+feedback.className="feedback incorrect";
+feedback.innerHTML="❌ Respuesta incorrecta. Revisa nuevamente la teoría.";
+}
 
-  const answers = {
-    "match-doc1":"a",
-    "match-doc2":"c",
-    "match-doc3":"b"
-  };
+}
 
-  let total = 0;
+function verifyLect1(){
+verifySimple("lect1","a","feedback-lect1","✅ Correcto. La carta formal usa lenguaje respetuoso.");
+}
 
-  Object.keys(answers).forEach(id=>{
-    const el = document.getElementById(id);
-    if(el && el.value === answers[id]) total++;
-  });
+function verifyLect2(){
+verifySimple("lect2","a","feedback-lect2","✅ Correcto. La carta informal se usa entre personas cercanas.");
+}
 
-  const feedback = document.getElementById("feedback-matching-docs");
+function verifyQ1(){
+verifySimple("q1","a","feedback-q1","✅ Correcto. La carta transmite información.");
+}
 
-  if(total === 3){
-    feedback.className = "feedback correct";
-    feedback.innerHTML = "✅ Excelente. Relacionaste correctamente los documentos.";
-  }else{
-    feedback.className = "feedback incorrect";
-    feedback.innerHTML = `❌ Obtuviste ${total}/3. Revisa las funciones de cada documento.`;
-  }
+function verifyQ2(){
+verifySimple("q2","b","feedback-q2","✅ Correcto. El remitente escribe y envía la carta.");
+}
+
+function verifyQ3(){
+verifySimple("q3","a","feedback-q3","✅ Correcto. La carta formal usa lenguaje respetuoso.");
+}
+
+function verifyQ4(){
+verifySimple("q4","a","feedback-q4","✅ Correcto. El destinatario es una parte importante.");
 }
